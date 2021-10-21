@@ -118,3 +118,8 @@ for i in list:
         print()
 
 print('great! the result is', m)
+
+
+num = int(input("Enter a number greater than 5:"))
+    if num <= 5:
+        raise Exception("The number you entered is not greater than 5")
