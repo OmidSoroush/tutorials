@@ -198,8 +198,104 @@ A1 = Audi('e-tron', 2018)
 A1.printname()
 
 class VW(Car):
+
     def __init__(self):
-        super.__init__(self)
+        # calling and using the initialization function of Car
+        Car.__init__(self, 'Tiguan', 2020)
 
 vw = VW()
 vw.printname()
+vw.printmodel()
+
+
+class Audi(Car):
+
+    def new_method(self):
+        print('I have got more skills than my parent')
+
+A1 = Audi('e-tron', 2018)
+A1.new_method()
+
+
+
+
+#creating parent class
+class Car:
+
+    def __init__(self,name,model, ecofriendly=True):
+        self.name=name
+        self.model=model
+        self.ecofriendly=ecofriendly
+
+    def turbo(self):
+        print("I have turbo functionality")
+
+    # function to print the car model
+    def printmodel(self):
+        print("The model of the car is:",self.model)
+
+
+
+class VW(Car):
+
+    def __init__(self, name, model=2017, ecofriendly=False):
+        self.name = name
+        self.model = model
+        self.ecofriendly = ecofriendly
+
+    def turbo(self):
+        print("I am fast but not too fast")
+
+vw = VW('Tiguan')
+vw.model
+vw.turbo()
+vw.printmodel()
+
+
+
+#creating parent class
+class Car:
+
+    def __init__(self,name='unknown' ,model='unknown' , ecofriendly=True):
+        self.name=name
+        self.model=model
+        self.ecofriendly=ecofriendly
+
+    def turbo(self):
+        print("I have turbo functionality")
+
+    # function to print the car model
+    def printmodel(self):
+        print("The model of the car is:",self.model)
+
+class VW(Car):
+
+    def __init__(self, price='budget'):
+        self.price = price
+        super().__init__(self)
+
+vw = VW()
+
+print(vw.price)
+vw.turbo()
+vw.printmodel()
+
+
+
+
+class John:
+
+    def own(self):
+        print("John owns three cars")
+
+class Sarah:
+
+    def fix_car(self):
+        print("Sarah knows how to fix cars")
+
+class Business(John, Sarah):
+    pass
+
+operation = Business()
+operation.own()
+operation.fix_car()
