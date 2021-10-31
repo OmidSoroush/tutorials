@@ -299,3 +299,19 @@ class Business(John, Sarah):
 operation = Business()
 operation.own()
 operation.fix_car()
+
+
+nums = [1, 2, 3, 4]
+
+for num in nums:
+    print(num)
+
+dir(nums)
+
+nums_iterator = iter(nums)
+
+print(next(nums_iterator))
+print(next(nums_iterator))
+print(next(nums_iterator))
+print(next(nums_iterator))
+print(next(nums_iterator))
