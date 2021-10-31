@@ -306,7 +306,7 @@ nums = [1, 2, 3, 4]
 for num in nums:
     print(num)
 
-dir(nums)
+dir(nums_iterator)
 
 nums_iterator = iter(nums)
 
@@ -315,3 +315,26 @@ print(next(nums_iterator))
 print(next(nums_iterator))
 print(next(nums_iterator))
 print(next(nums_iterator))
+
+import inspect
+
+help(list)
+
+
+class MyCustomIterable:
+    def __init__(self, start, end):
+        self.current = start - 1
+        self.end = end
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.current += 1
+        if self.current < self.end:
+            return self.current
+        raise StopIteration
+
+
+for i in MyCustomIterable(5, 9):
+    print(i)
