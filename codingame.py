@@ -338,3 +338,8 @@ class MyCustomIterable:
 
 for i in MyCustomIterable(5, 9):
     print(i)
+
+lst =['new', 'name', 'none']
+
+import json
+json.loads('lst')
