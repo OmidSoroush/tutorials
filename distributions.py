@@ -141,11 +141,44 @@ from scipy.stats import norm
 import matplotlib.pyplot as plt
 import numpy as np
 
-# creating a array of values between
-# -10 to 10 with a difference of 0.1
-x = np.arange(-10, 10, 0.1)
+# creating an array of values
+x = np.arange(-5, 5, 0.1)
 
-y = norm.pdf(x, 0, 2)
+y = norm.pdf(x, 0, 1)
 
-plt.plot(x, y)
+plt.plot(x, y, color='#20c997')
+plt.title('Normal Distribution (PDF)')
+plt.xlabel('Values')
+plt.ylabel('Probabilities')
+plt.show()
+
+
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np
+
+# creating an array of values
+x = np.arange(-5, 5, 0.1)
+
+y = norm.cdf(x, 0, 1)
+
+plt.plot(x, y, color='#20c997')
+plt.title('Normal Distribution (CDF)')
+plt.xlabel('Values')
+plt.ylabel('Probabilities')
+plt.show()
+
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np
+
+# creating an array of probabilities
+x = np.arange(0, 1, 0.01)
+
+y = norm.ppf(x, 0, 1)
+
+plt.plot(x, y, color='#20c997')
+plt.title('Normal Distribution (ppf)')
+plt.xlabel('Probabilities')
+plt.ylabel('Values')
 plt.show()
