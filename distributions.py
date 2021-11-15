@@ -103,11 +103,49 @@ from scipy.stats import uniform
 import matplotlib.pyplot as plt
 import numpy as np
 
-# creating a array of values between
-# -3 to 8 with a difference of 0.1
-x = np.arange(-3, 8, 0.1)
+# creating a array of values
+x = np.arange(-2, 12, 0.1)
 
-y = uniform.cdf(x, 0, 5)
+y = uniform.cdf(x=x, loc=2, scale=6)
+
+plt.plot(x, y, color='#20c997')
+plt.title('Uniform (CDF)')
+plt.xlabel('Uniform values')
+plt.ylabel('Probabilities')
+plt.show()
+
+
+
+
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+#if you want to maintain reproducibility
+np.random.seed(111)
+
+# create random variable with 100000 normally distributed values
+# mean of zero and std. deviation of 1
+x = norm.rvs(0, 1, 100000)
+# mean of zero and std. deviation of 2
+y = norm.rvs(0, 2, 100000)
+
+sns.distplot(x, color='#20c997', hist=False, kde=True)
+sns.distplot(y, color='brown', hist=False, kde=True)
+plt.annotate('-- μ = 0, σ =1', xy=(6, 0.35), color='#20c997')
+plt.annotate('-- μ = 0, σ =2', xy=(6, 0.30), color='brown')
+plt.show()
+
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np
+
+# creating a array of values between
+# -10 to 10 with a difference of 0.1
+x = np.arange(-10, 10, 0.1)
+
+y = norm.pdf(x, 0, 2)
 
 plt.plot(x, y)
 plt.show()
