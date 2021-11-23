@@ -118,6 +118,35 @@ print(re.split(pattern, string))
 import re
 
 pattern = "@"
+replace = "AT"
 string = "employee@company.com"
 
-print(re.split(pattern, string))
+print(re.sub(pattern, replace, string))
+
+
+
+import re
+
+pattern = "C"
+string1 = "Car"
+string2 = "Bar"
+
+print(re.match(pattern, string1))
+print(re.match(pattern, string2))
+
+# use group() method to get the match object
+print(re.match(pattern, string1).group())
+
+
+
+import re
+
+pattern = "\w{6,7}"
+match = string = "RegExes are very powerful"
+
+match = re.search(pattern, string)
+
+print(match.group())
+print(match.start())
+print(match.end())
+print(match.span())
