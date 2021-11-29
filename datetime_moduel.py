@@ -148,16 +148,55 @@ print(dt)
 
 from datetime import datetime
 
-# current date and time
-now = datetime.now()
+datetime.today()
 
-t = now.strftime("%H:%M:%S")
-print("time:", t)
+# today's date and time
+today = datetime.today()
 
-s1 = now.strftime("%m/%d/%Y, %H:%M:%S")
-# mm/dd/YY H:M:S format
-print("s1:", s1)
+# take the time string only
+t = today.strftime("%H:%M:%S")
+print("string time:", t)
 
-s2 = now.strftime("%d/%m/%Y, %H:%M:%S")
-# dd/mm/YY H:M:S format
-print("s2:", s2)
+string = today.strftime("%d/%m/%Y, %H:%M:%S")
+print("string datetime:", string)
+
+
+
+
+
+from datetime import datetime
+import pytz
+
+# local time
+local = datetime.now()
+print("Local:", local.strftime("%m/%d/%Y, %H:%M:%S"))
+
+# time based on another timezone
+tz_US_Eastern = pytz.timezone('US/Eastern')
+datetime_US_Eastern = datetime.now(tz_US_Eastern)
+print("US Eastern:", datetime_US_Eastern.strftime("%m/%d/%Y, %H:%M:%S"))
+
+
+
+
+
+from datetime import datetime
+import pytz
+
+# local time
+local = datetime.now()
+print("Local:", local.strftime("%m/%d/%Y, %H:%M:%S"))
+
+# Convert local date into America/New_York timezone
+NY = pytz.timezone("America/New_York")
+datetime_NY = local.astimezone(NY)
+print("New York:", datetime_NY.strftime("%m/%d/%Y, %H:%M:%S"))
+
+
+from datetime import timedelta
+
+td1 = timedelta(weeks = 2, days = 7, hours = 12)
+
+print("Total seconds =", td1.total_seconds())
+
+55 * 60 * 60
