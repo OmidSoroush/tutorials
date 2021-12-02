@@ -98,3 +98,31 @@ data = [(44, 34, 45),
 df = pd.DataFrame(data, columns=list('ABC'))
 
 df = df.apply(lambda x: np.mean(x) if x.name in ['A','B'] else x)
+
+
+
+import seaborn as sns
+
+titanic = sns.load_dataset("titanic")
+
+titanic.head()
+
+titanic.survived.duplicated()
+
+titanic.duplicated()
+
+titanic.duplicated(subset=['survived', 'age', 'alive'])
+
+
+titanic.survived.duplicated().sum()
+
+(~titanic.duplicated()).sum()
+
+titanic.duplicated(subset=['survived', 'age', 'pclass']).sum()
+
+
+titanic.loc[titanic.duplicated(), :]
+
+titanic.drop_duplicates(inplace=True)
+
+titanic.drop_duplicates(subset=['survived', 'age', 'pclass'])
