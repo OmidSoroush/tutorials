@@ -126,3 +126,5 @@ titanic.loc[titanic.duplicated(), :]
 titanic.drop_duplicates(inplace=True)
 
 titanic.drop_duplicates(subset=['survived', 'age', 'pclass'])
+
+titanic.duplicated(subset=['survived', 'age', 'pclass'])
