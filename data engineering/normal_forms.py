@@ -9,4 +9,3 @@ lens = list(map(len, df['Subjects'].values))
 res = pd.DataFrame({'Name': np.repeat(
     df['Name'], lens), 'Subject': np.concatenate(df['Subjects'].values)})
 
-print(res)
