@@ -53,3 +53,4 @@ df['salary'].fillna(method='bfill', inplace=True)
 
 
 df['salary'].interpolate(method='linear')
+df['salary'].interpolate(method='polynomial')
