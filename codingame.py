@@ -342,4 +342,4 @@ for i in MyCustomIterable(5, 9):
 lst =['new', 'name', 'none']
 
 import json
-json.loads('lst')
+#json.loads('lst')
