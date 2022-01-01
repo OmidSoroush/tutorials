@@ -20,6 +20,8 @@ spark = SparkSession.builder \
 df = spark.createDataFrame(data, columns)
 df.show()
 
+# summary statistics
 df.describe().show()
 
+# print the schema
 df.printSchema()
