@@ -25,3 +25,6 @@ df.describe().show()
 
 # print the schema
 df.printSchema()
+
+
+# the rest comes here
