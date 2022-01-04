@@ -28,3 +28,18 @@ df.printSchema()
 
 
 # the rest comes here
+df.columns
+
+
+from pyspark.sql.types import (StructType, StructField,
+                                StringType, IntegerType)
+
+data_schema = StructType([StructField("first_name", StringType(), True),
+                          StructField("last_name", StringType(), True),
+                          StructField("gender", StringType(), True),
+                          StructField("language", StringType(), True),
+                          StructField("age", IntegerType(), True),
+                          StructField("salary", IntegerType(), True)])
+
+df = spark.createDataFrame(data, schema=data_schema)
+df.printSchema()
