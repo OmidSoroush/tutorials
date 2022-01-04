@@ -43,3 +43,25 @@ data_schema = StructType([StructField("first_name", StringType(), True),
 
 df = spark.createDataFrame(data, schema=data_schema)
 df.printSchema()
+
+type(df["age"])
+
+df["age"]
+
+df.select("age").show(3)
+
+df.head(2)[0]
+
+df.select(["first_name", "age"]).show(3)
+
+df.withColumn("new_salary", df["salary"] + 100).show(4)
+
+df.show()
+
+df.withColumnRenamed("salary", "my_new_salary").show(4)
+
+df.createOrReplaceTempView("employees")
+
+results = spark.sql("SELECT * FROM employees WHERE age > 40")
+
+results.show(3)
