@@ -59,7 +59,7 @@ df1.select(col("date"),
      dayofyear(col("date")).alias("dayofyear"),
   ).show()
 
-data=[["1","04-14-2010 10 21 39 07"],["2","06-22-2015 09 11 29 333"],["3","07-15-2020 08 12 59 73"]]
+data=[["1","04-14-2012 10 21 39 07"],["2","06-22-2015 09 11 29 333"],["3","07-15-2020 08 12 59 73"]]
 df2=spark.createDataFrame(data,["id","timestamp_string"])
 df2.show(truncate=False)
 
