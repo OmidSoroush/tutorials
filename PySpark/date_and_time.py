@@ -15,7 +15,7 @@ df.withColumn("current_date", current_date()).show()
 
 df.select(current_date().alias("current_date")).show()
 
-
+#df.select(current_date().alias("current_date")).show()
 
 
 data=[["1","2021-25-01"],["2","2019-13-01"],["3","2021-23-02"]]
