@@ -78,3 +78,10 @@ df3.select(col("to_timestamp"),
     second(col("to_timestamp")).alias("second")
   ).show(truncate=False)
 
+
+
+df3.select(col("to_timestamp"),
+    hour(col("to_timestamp")).alias("hour"),
+    minute(col("to_timestamp")).alias("minute"),
+    second(col("to_timestamp")).alias("second")
+  ).show(truncate=False)
