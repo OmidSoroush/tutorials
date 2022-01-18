@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.DataFrame({'Name': ['Mario', 'Glenn', 'Steve'], 'Subjects': [
+df = pd.DataFrame({'Name': ['Mario', 'Martin', 'Steve'], 'Subjects': [
     ['English', 'Math'], ['Math'], ['Science', 'English']]})
 
 lens = list(map(len, df['Subjects'].values))
