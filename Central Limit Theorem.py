@@ -35,3 +35,5 @@ plt.annotate(mn_of_mns, xy=(43, 0.9), color='#20c997')
 plt.title('Distribution of sample means \n'
           '(sample size n = 400)')
 plt.show()
+
+print(means)
